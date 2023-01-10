@@ -25,6 +25,7 @@ from glob     import glob
 from time     import time, sleep
 from PIL      import Image
 
+import os
 import re
 def download_drive(url, unzip = True):
     id = re.findall("d/([\S]*)/", url)[0]
@@ -36,6 +37,6 @@ def download_drive(url, unzip = True):
         os.system("unzip temp.zip")
         os.system("rm temp.zip")
     else:
-        os.system("gdown {} ".format(export_url))    
-
-    return 
+        os.system("gdown {} ".format(export_url))
+        
+    return
